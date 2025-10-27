@@ -2,76 +2,59 @@
 set -euo pipefail
 
 cat > README.md <<'README'
-# 🏷️ LeilaoApp
+<h1 align="center">🏷️ LeilaoApp</h1>
 
-**LeilaoApp** is a full-stack real-time auction platform built with **Next.js** (frontend) and **NestJS** (backend).  
-It allows users to create and manage auctions, place bids in real time, and receive instant notifications — all through a responsive interface powered by **Socket.IO** and **Prisma (MongoDB)**.
+<p align="center">
+  <b>Real-Time Auction Platform built with Next.js & NestJS</b>  
+  <br/>
+  <i>Bid, compete, and win — all in real time!</i>
+</p>
 
----
-
-## 🌍 Live Demo & Repositories
-
-- **Live App:** [https://leilaoapp.vercel.app](https://leilaoapp.vercel.app)  
-- **Frontend Repo:** [github.com/TheRealCocky/Leilao-client](https://github.com/TheRealCocky/Leilao-client)  
-- **Backend Repo:** [github.com/TheRealCocky/Leilao-server](https://github.com/TheRealCocky/Leilao-server)
+<p align="center">
+  <a href="https://leilaoapp.vercel.app"><img src="https://img.shields.io/badge/Live%20App-Vercel-blue?style=for-the-badge" /></a>
+  <a href="https://github.com/TheRealCocky/Leilao-client"><img src="https://img.shields.io/badge/Frontend-Next.js-black?style=for-the-badge&logo=nextdotjs" /></a>
+  <a href="https://github.com/TheRealCocky/Leilao-server"><img src="https://img.shields.io/badge/Backend-NestJS-red?style=for-the-badge&logo=nestjs" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Database-MongoDB-green?style=for-the-badge&logo=mongodb" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Deployed%20On-Render%20%26%20Vercel-purple?style=for-the-badge" /></a>
+</p>
 
 ---
 
 ## 🚀 Overview
 
-LeilaoApp provides a modern auction experience where multiple users can bid simultaneously with real-time updates and winner notifications.  
-It’s designed to be **scalable**, **secure**, and **responsive**, integrating **Next.js**, **NestJS**, **Prisma**, and **MongoDB** under a clean architecture.
+**LeilaoApp** is a full-stack, real-time auction platform where users can **create auctions**, **place live bids**, and **receive instant notifications** when they win.  
+It’s designed to be **responsive**, **secure**, and **scalable**, connecting buyers and sellers in real-time through **Socket.IO** and **Prisma (MongoDB)**.
+
+---
+
+## 🌍 Live Demo & Repositories
+
+- 🖥️ **Live App:** [https://leilaoapp.vercel.app](https://leilaoapp.vercel.app)  
+- 💻 **Frontend Repo:** [TheRealCocky/Leilao-client](https://github.com/TheRealCocky/Leilao-client)  
+- ⚙️ **Backend Repo:** [TheRealCocky/Leilao-server](https://github.com/TheRealCocky/Leilao-server)
 
 ---
 
 ## ✨ Key Features
 
-- 🧑‍💼 **User Roles:** Buyer, Seller, and Admin  
-- 🕒 **Real-time Bidding:** Live auction updates using Socket.IO  
-- 🧾 **Auction Management:** Create, update, and close auctions  
-- 🔔 **Notifications:** Real-time winner and bid updates  
-- 🔐 **Authentication:** JWT-based auth with role-based permissions  
-- 📊 **Dashboards:** Track your auctions and bids  
-- 📱 **Fully Responsive UI:** Optimized for mobile and desktop  
+| Feature | Description |
+|----------|--------------|
+| 🧑‍💼 **User Roles** | Buyer, Seller, and Admin with role-based permissions |
+| ⚡ **Real-Time Bidding** | Instant bid updates via Socket.IO |
+| 🔔 **Notifications** | Live winner and outbid alerts |
+| 📊 **Dashboard** | Track auctions and user activities |
+| 🔐 **Authentication** | Secure JWT login system |
+| 🧾 **Auction Management** | Create, edit, and finalize auctions |
+| 📱 **Responsive Design** | Works on mobile, tablet, and desktop |
 
 ---
 
 ## 🧠 Architecture
 
+```mermaid
+graph LR
+A[Next.js Frontend] -- REST API --> B[NestJS Backend]
+A <-- WebSocket --> B
+B --> C[(MongoDB Database)]
 
-- **Frontend:** Renders auction pages and real-time updates  
-- **Backend:** Handles authentication, auction logic, and notifications  
-- **Socket.IO:** Synchronizes data between users instantly  
-- **Database:** MongoDB via Prisma ORM  
-
----
-
-## ⚙️ Tech Stack
-
-**Frontend:**  
-- Next.js 15  
-- TypeScript  
-- TailwindCSS + shadcn/ui  
-- Socket.IO Client  
-- Deployed on Vercel  
-
-**Backend:**  
-- NestJS  
-- Prisma ORM  
-- MongoDB  
-- JWT Authentication  
-- Socket.IO Server  
-- Deployed on Render  
-
----
-
-## 🧩 Environment Variables
-
-### Backend (`.env`)
-```bash
-DATABASE_URL="mongodb+srv://<user>:<password>@cluster.mongodb.net/auction-app"
-JWT_SECRET="your_jwt_secret"
-PORT=3001
-git clone https://github.com/TheRealCocky/Leilao-client
-git clone https://github.com/TheRealCocky/Leilao-server
 
