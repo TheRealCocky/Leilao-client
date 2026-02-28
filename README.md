@@ -2,36 +2,41 @@
 set -euo pipefail
 
 cat > README.md <<'README'
-<h1 align="center">🏷️ LeilaoApp</h1>
+<h1 align="center">🏷️ LeilaoApp v2.0</h1>
 
 <p align="center">
-  <b>Real-Time Auction Platform built with Next.js & NestJS</b>  
+  <b>Real-Time Auction Platform | Secure & Scalable</b>  
   <br/>
-  <i>Bid, compete, and win — all in real time!</i>
+  <i>Bid with confidence — powered by Next.js 15 & NestJS 11</i>
 </p>
 
 <p align="center">
   <a href="https://leilaoapp.vercel.app"><img src="https://img.shields.io/badge/Live%20App-Vercel-blue?style=for-the-badge" /></a>
-  <a href="https://github.com/TheRealCocky/Leilao-client"><img src="https://img.shields.io/badge/Frontend-Next.js-black?style=for-the-badge&logo=nextdotjs" /></a>
-  <a href="https://github.com/TheRealCocky/Leilao-server"><img src="https://img.shields.io/badge/Backend-NestJS-red?style=for-the-badge&logo=nestjs" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Database-MongoDB-green?style=for-the-badge&logo=mongodb" /></a>
-  <a href="#"><img src="https://img.shields.io/badge/Deployed%20On-Render%20%26%20Vercel-purple?style=for-the-badge" /></a>
+  <a href="#"><img src="https://img.shields.io/badge/Security-Patched-success?style=for-the-badge&logo=shield" /></a>
+  <a href="https://github.com/TheRealCocky/Leilao-client"><img src="https://img.shields.io/badge/Frontend-Next.js%2015-black?style=for-the-badge&logo=nextdotjs" /></a>
+  <a href="https://github.com/TheRealCocky/Leilao-server"><img src="https://img.shields.io/badge/Backend-NestJS%2011-red?style=for-the-badge&logo=nestjs" /></a>
 </p>
 
 ---
 
-## 🚀 Overview
-
-**LeilaoApp** is a full-stack, real-time auction platform where users can **create auctions**, **place live bids**, and **receive instant notifications** when they win.  
-It’s designed to be **responsive**, **secure**, and **scalable**, connecting buyers and sellers in real-time through **Socket.IO** and **Prisma (MongoDB)**.
+## 🛡️ Security Update (2026)
+Esta versão foi atualizada para mitigar vulnerabilidades críticas de segurança:
+- **Next.js Patched:** Atualizado para a versão estável `15.1.7` (Correção da CVE-2025-66478).
+- **ESLint Config:** Implementação de *Flat Config* para garantir integridade do código durante o build.
+- **Secure JWT:** Sistema de autenticação reforçado com NestJS Passport.
 
 ---
 
-## 🌍 Live Demo & Repositories
+## 🚀 Overview
+**LeilaoApp** é uma plataforma de leilões em tempo real que permite aos utilizadores **criar leilões**, **licitar ao vivo** e **receber notificações instantâneas**.  
+Focado em performance e segurança, o ecossistema utiliza **Socket.IO** para comunicação bidirecional e **Prisma** para gestão de dados no **MongoDB**.
 
-- 🖥️ **Live App:** [https://leilaoapp.vercel.app](https://leilaoapp.vercel.app)  
-- 💻 **Frontend Repo:** [TheRealCocky/Leilao-client](https://github.com/TheRealCocky/Leilao-client)  
-- ⚙️ **Backend Repo:** [TheRealCocky/Leilao-server](https://github.com/TheRealCocky/Leilao-server)
+---
+
+## 🧠 Architecture & Flow
+O sistema utiliza uma arquitetura desacoplada onde o Frontend comunica via REST para operações CRUD e via WebSockets para a lógica de licitação.
+
+
 
 ---
 
@@ -39,22 +44,30 @@ It’s designed to be **responsive**, **secure**, and **scalable**, connecting b
 
 | Feature | Description |
 |----------|--------------|
-| 🧑‍💼 **User Roles** | Buyer, Seller, and Admin with role-based permissions |
-| ⚡ **Real-Time Bidding** | Instant bid updates via Socket.IO |
-| 🔔 **Notifications** | Live winner and outbid alerts |
-| 📊 **Dashboard** | Track auctions and user activities |
-| 🔐 **Authentication** | Secure JWT login system |
-| 🧾 **Auction Management** | Create, edit, and finalize auctions |
-| 📱 **Responsive Design** | Works on mobile, tablet, and desktop |
+| ⚡ **Real-Time Bidding** | Atualizações instantâneas de licitações via Socket.IO |
+| 🛡️ **Role-Based Access** | Permissões distintas para Comprador, Vendedor e Admin |
+| 📊 **Live Dashboard** | Acompanhamento de métricas e estado dos leilões em tempo real |
+| 🔐 **Secure Auth** | Login via JWT com expiração e renovação segura |
+| 📱 **Full Responsive** | Experiência otimizada para Desktop e Mobile |
 
 ---
 
-## 🧠 Architecture
+## ⚙️ Deployment & Setup
 
-```mermaid
-graph LR
-A[Next.js Frontend] -- REST API --> B[NestJS Backend]
-A <-- WebSocket --> B
-B --> C[(MongoDB Database)]
+### Backend (Render)
+- **Runtime:** Node.js 20+
+- **Build:** `npm install && npx prisma generate && npm run build`
+- **Start:** `npm run start:prod`
 
+### Frontend (Vercel)
+- **Framework:** Next.js 15 (App Router)
+- **Build:** `npm run build`
+
+---
+
+## 🌍 Repositories
+- 🖥️ **Frontend:** [TheRealCocky/Leilao-client](https://github.com/TheRealCocky/Leilao-client)
+- ⚙️ **Backend:** [TheRealCocky/Leilao-server](https://github.com/TheRealCocky/Leilao-server)
+
+README
 
